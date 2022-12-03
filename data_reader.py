@@ -3,4 +3,4 @@ import numpy as np
 import pdb
 
 dataset = pd.read_csv("../NYPD_Complaint_Data_Historic.csv", low_memory=False)
-pdb.set_trace()
+dataset.drop(columns = ['CMPLNT_NUM', 'PD_CD', 'KY_CD', 'HOUSING_PSA', 'PARKS_NM', 'TRANSIT_DISTRICT', 'STATION_NAME'], inplace = True)
