@@ -25,3 +25,5 @@ def get_graph():
     axes = fig.add_subplot(111)
     axes.pie(all_vic_races, labels=vic_race_classes, autopct='%1.1f%%')
     plt.show()
+    
+get_graph()

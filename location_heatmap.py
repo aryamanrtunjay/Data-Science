@@ -4,8 +4,10 @@ import gmaps
 import gmaps.datasets
 import dataset as dataset
 import gmaps_apikey as gak # API key for Google Maps
+import math
+import pdb
 # Load the datasets
-crime_data = dataset.get_dataset();
+crime_data = dataset.get_dataset()
 crime_data.head()
 
 Latitude = crime_data['Latitude']
@@ -30,6 +32,15 @@ df = pd.DataFrame(data=heatmap_data)
 locations = df[['Latitude', 'Longitude']]
 weights = df['Latitude']
 fig = gmaps.figure()
-heatmap_layer = gmaps.heatmap_layer(locations, weights=weights)
-fig.add_layer(gmaps.heatmap_layer(locations, weights=weights))
+cleaned_locs = []
+cleanded_weights = []
+for i in range(len(locations)):
+    if type(locations['Latitude'][i]) != str and not math.isnan(locations['Latitude'][i]) and not math.isnan(locations['Latitude'][i]):
+        if type(locations['Longitude'][i]) != str and not math.isnan(locations['Longitude'][i]) and not math.isnan(locations['Longitude'][i]):
+            cleaned_locs.append((locations['Latitude'][i], i[1]), locations['Longitude'][i]))
+        
+for 
+pdb.set_trace()
+heatmap_layer = gmaps.heatmap_layer(cleaned_locs, weights=weights)
+fig.add_layer(heatmap_layer)
 fig # Display the heatmap

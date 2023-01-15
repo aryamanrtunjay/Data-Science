@@ -10,24 +10,22 @@ def get_graph():
 
     # Get the time data
     times_raw = [i for i in crime_ds['CMPLNT_FR_DT'] if type(i) != float]
-    pdb.set_trace()
     # Get the hour of each time
     all_times = []
     for i in range(len(times_raw)):
         all_times.append(int(times_raw[i][0:2]))
 
     # Get the number of crimes for each hour
-    time_data = [0 for i in range(24)]
+    time_data = [0 for i in range(12)]
     for i in all_times:
-        time_data[i] += 1
+        time_data[i - 1] += 1
 
     # Set up the graph
     fig = plt.figure()
     axes = fig.add_subplot(111)
 
     # Set the x-axis labels
-    time_values = np.arange(1, 12, 1)
-
+    time_values = np.arange(1, 13, 1)
     # Plot the data
     axes.bar(time_values, time_data)
 
