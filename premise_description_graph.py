@@ -15,6 +15,19 @@ def get_graph():
             else:
                 all_premise_classes[premise_classes.index(premise)] += 1
 
+    cleaned_premise_descs = []
+    cleaned_premise_descs_classes = []
+    for i in all_premise_classes:
+        if i / sum(all_premise_classes) > 2:
+            cleaned_premise_descs.append(i)
+            cleaned_premise_descs_classes.append(premise_classes[all_premise_classes.index(i)])
+        else:
+            if "OTHER" not in cleaned_premise_descs_classes:
+                cleaned_premise_descs_classes.append("OTHER")
+                cleaned_premise_descs.append(i)
+            else:
+                cleaned_premise_descs[cleaned_premise_descs_classes.index("OTHER")] += 1
+
     fig = plt.figure(0)
     axes = fig.add_subplot(111)
     axes.pie(all_premise_classes, labels=premise_classes, autopct='%1.1f%%')
