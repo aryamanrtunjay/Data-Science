@@ -34,13 +34,3 @@ weights = df['Latitude']
 fig = gmaps.figure()
 cleaned_locs = []
 cleanded_weights = []
-for i in range(len(locations)):
-    if type(locations['Latitude'][i]) != str and not math.isnan(locations['Latitude'][i]) and not math.isnan(locations['Latitude'][i]):
-        if type(locations['Longitude'][i]) != str and not math.isnan(locations['Longitude'][i]) and not math.isnan(locations['Longitude'][i]):
-            cleaned_locs.append((locations['Latitude'][i], i[1]), locations['Longitude'][i]))
-        
-for 
-pdb.set_trace()
-heatmap_layer = gmaps.heatmap_layer(cleaned_locs, weights=weights)
-fig.add_layer(heatmap_layer)
-fig # Display the heatmap
