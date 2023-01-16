@@ -1,4 +1,5 @@
 import numpy as np
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import pdb
@@ -17,6 +18,7 @@ def get_graph():
 
     # Get the number of crimes for each hour
     time_data = [0 for i in range(12)]
+
     for i in all_times:
         time_data[i - 1] += 1
 
