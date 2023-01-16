@@ -38,4 +38,6 @@ def get_graph():
     axes.set_yticks(np.arange(0, max(time_data), 50000))
     axes.set_title('Number of Crimes by Time of Day')
 
-plt.show()
+    plt.show()
+
+get_graph()

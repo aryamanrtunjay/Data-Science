@@ -34,7 +34,7 @@ def get_graph():
                 cleaned_crime_descs[cleaned_crime_desc_classes.index("OTHER")] += i
 
     fig = plt.figure()
-    pdb.set_trace()
     axes = fig.add_subplot(111)
     axes.pie(cleaned_crime_descs, labels=cleaned_crime_desc_classes, autopct='%1.1f%%')
     plt.show()
+get_graph()
