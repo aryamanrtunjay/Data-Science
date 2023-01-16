@@ -18,7 +18,7 @@ def get_graph():
     cleaned_premise_descs = []
     cleaned_premise_descs_classes = []
     for i in all_premise_classes:
-        if i / sum(all_premise_classes) > 2:
+        if i / sum(all_premise_classes) > 0.019:
             cleaned_premise_descs.append(i)
             cleaned_premise_descs_classes.append(premise_classes[all_premise_classes.index(i)])
         else:
@@ -30,7 +30,7 @@ def get_graph():
 
     fig = plt.figure(0)
     axes = fig.add_subplot(111)
-    axes.pie(all_premise_classes, labels=premise_classes, autopct='%1.1f%%')
+    axes.pie(cleaned_premise_descs, labels=cleaned_premise_descs_classes, autopct='%1.1f%%')
     plt.show()
 
 get_graph()
