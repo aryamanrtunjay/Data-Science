@@ -1,6 +1,7 @@
 import tensorflow as tf
 from tensorflow import keras
-from tensorflow.keras import layers
+from keras import backend as K
+from keras import layers
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 import pandas as pd
@@ -41,9 +42,11 @@ model = keras.Sequential([
     keras.layers.Dense(16, activation='relu'),
     keras.layers.Dense(8, activation='softmax')
 ])
+
 model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['Accuracy'])
+K.set_value(model.optimizer.learning_rate, 0.1)
 
 model.fit(X_train, Y_train, epochs=200, batch_size=256)
 model.evaluate(X_test, Y_test)
