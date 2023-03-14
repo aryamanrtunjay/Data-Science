@@ -15,17 +15,28 @@ import wandb
 
 
 # Read the dataset from a pickle file if it exists, else read from the csv file and create the pickle file
-datapath = "/home/raghavkalyan/Files/Documents/Devolopment/TSA/Data-Science/NYPD_Complaint_Data_Historic.csv"
 
-if(os.path.exists("./X_total.pickle") and os.path.exist("./Y_total.pickle")):
-    X_total = pd.read_pickle("./X_total.pickle")
-    Y_total = pd.read_pickle("./Y_total.pickle")
+# Raghav Paths
+# datapath = "/home/raghavkalyan/Files/Documents/Devolopment/TSA/Data-Science/NYPD_Complaint_Data_Historic.csv"
+# X_total_pickle = "./X_total.pickle"
+# Y_total_pickle = "./Y_total.pickle"
+# data_pickle = "./data.pickle"
+
+# Aryaman Paths
+datapath = "../../NYPD_Complaint_Data_Historic.csv"
+X_total_pickle = "../../X_total.pickle"
+Y_total_pickle = "../../Y_total.pickle"
+data_pickle = "../../data.pickle"
+
+if(os.path.exists(X_total_pickle) and os.path.exist(Y_total_pickle)):
+    X_total = pd.read_pickle(X_total_pickle)
+    Y_total = pd.read_pickle(Y_total_pickle)
 else:
     if os.path.exists('../data.pickle'):
-        dataset = pd.read_pickle('../data.pickle')
+        dataset = pd.read_pickle('./data.pickle')
     else:
-        dataset = pd.read_csv("../NYPD_Complaint_Data_Historic.csv", low_memory=False)
-        dataset.to_pickle('../data.pickle')
+        dataset = pd.read_csv("./NYPD_Complaint_Data_Historic.csv", low_memory=False)
+        dataset.to_pickle('./data.pickle')
     # Get train and test datasets
     subset = dataset[['CMPLNT_FR_TM','ADDR_PCT_CD', 'LAW_CAT_CD', 'SUSP_RACE']].copy(deep=True)
     subset.dropna(axis = 0, inplace=True)
@@ -48,7 +59,6 @@ else:
     
     X_total['CMPLNT_FR_TM'] = X_total['CMPLNT_FR_TM'].str.split(':').str[0]
     X_total['CMPLNT_FR_TM'] = X_total['CMPLNT_FR_TM'].astype(int)
-
     pd.to_pickle(X_total, "../X_total.pickle")
     pd.to_pickle(Y_total, "../Y_total.pickle")
 
