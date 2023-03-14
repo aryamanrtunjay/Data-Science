@@ -12,7 +12,7 @@ import os
 import pdb
 import wandb
 
-
+print("Num GPUs Avaialble: ", len(tf.config.experimental.list_physical_devices('GPU')))
 
 # Read the dataset from a pickle file if it exists, else read from the csv file and create the pickle file
 
@@ -28,7 +28,7 @@ X_total_pickle = "../../X_total.pickle"
 Y_total_pickle = "../../Y_total.pickle"
 data_pickle = "../../data.pickle"
 
-if(os.path.exists(X_total_pickle) and os.path.exist(Y_total_pickle)):
+if(os.path.exists(X_total_pickle) and os.path.exists(Y_total_pickle)):
     X_total = pd.read_pickle(X_total_pickle)
     Y_total = pd.read_pickle(Y_total_pickle)
 else:
