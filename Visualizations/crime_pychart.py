@@ -19,7 +19,8 @@ def get_graph():
                 all_crime_descs.append(1)
             else:
                 all_crime_descs[crime_desc_classes.index(crime_desc)] += 1
-
+    #increase the font size 
+    plt.rcParams.update({'font.size': 12})
     cleaned_crime_descs = []
     cleaned_crime_desc_classes = []
     for i in all_crime_descs:
@@ -32,9 +33,21 @@ def get_graph():
                 cleaned_crime_descs.append(i)
             else:
                 cleaned_crime_descs[cleaned_crime_desc_classes.index("OTHER")] += i
-
+    r = cleaned_crime_desc_classes.index("RAPE") 
+    o = cleaned_crime_desc_classes.index("OTHER")
+    # set it blank
+    cleaned_crime_descs[r] = 0
+    cleaned_crime_descs[o] = 0
+    cleaned_crime_descs.pop(r)
+    cleaned_crime_desc_classes.pop(r)
+    cleaned_crime_desc_classes.pop(o)
+    cleaned_crime_descs.pop(o)
     fig = plt.figure()
     axes = fig.add_subplot(111)
     axes.pie(cleaned_crime_descs, labels=cleaned_crime_desc_classes, autopct='%1.1f%%')
+
+
+    axes.set_title('Types of Crime in New York City')
+
     plt.show()
 get_graph()

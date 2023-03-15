@@ -12,7 +12,7 @@ def get_graph():
     all_vic_races = []
 
     for i in range(len(crime_ds)):
-        vic_race = crime_ds['VIC_RACE'][i]
+        vic_race = crime_ds['SUSP_SEX'][i]
         if vic_race != 'UNKNOWN' and vic_race != "OTHER" and type(vic_race) == str:
             if vic_race not in vic_race_classes:
                 vic_race_classes.append(vic_race)
@@ -21,9 +21,13 @@ def get_graph():
                 all_vic_races[vic_race_classes.index(vic_race)] += 1
 
 
+    #all_vic_races.remove(1)
+    #vic_race_classes.remove('U') 
+
     fig = plt.figure()
     axes = fig.add_subplot(111)
     axes.pie(all_vic_races, labels=vic_race_classes, autopct='%1.1f%%')
+    axes.set_title("Suspect Sex in New York City")
     plt.show()
     
 get_graph()

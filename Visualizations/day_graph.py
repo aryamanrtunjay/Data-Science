@@ -21,16 +21,19 @@ def get_graph():
     axes = fig.add_subplot(111)
     # Set the x-axis labels
     day_values = np.arange(0, 7, 1)
+    day_value_labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     # Plot the data
     axes.bar(day_values, day_data)
     # Configure the graph
     axes.set_xlabel('Day of the Week')
+    axes.set_xticklabels(day_value_labels)
     axes.set_ylabel('Number of Crimes')
     axes.set_xticks(day_values)
-    axes.set_yticks(np.arange(0, max(day_data), 50000))
-    axes.set_title('Number of Crimes by Day of the Week')
+    axes.set_yticks(np.arange(0, max(day_data), 10000))
+    axes.set_title('Number of Crimes by Day of the Week Since 2006')
     plt.show()
 
-get_graph(2022)
+get_graph()
+
 
 
