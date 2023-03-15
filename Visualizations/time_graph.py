@@ -27,7 +27,7 @@ def get_graph():
 
     # Set the x-axis labels
     time_values = np.arange(0, 24, 1)
-
+    time_values_labels= ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23']
     # Plot the data
     axes.bar(time_values, time_data)
 
@@ -35,6 +35,7 @@ def get_graph():
     axes.set_xlabel('Time of Day')
     axes.set_ylabel('Number of Crimes')
     axes.set_xticks(time_values)
+    axes.set_xticklabels(time_values_labels)
     axes.set_yticks(np.arange(0, max(time_data), 50000))
     axes.set_title('Number of Crimes by Time of Day')
 
