@@ -31,6 +31,6 @@ def get_graph():
     axes.set_title('Number of Crimes by Day of the Week')
     plt.show()
 
-get_graph()
+get_graph(2022)
 
 
