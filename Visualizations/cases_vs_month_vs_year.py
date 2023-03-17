@@ -36,4 +36,4 @@ def get_graph(year: int):
     axes.set_title('Crimes vs Month in ' + str(year))
     plt.show()
 
-get_graph(2017)
+get_graph(2023)
