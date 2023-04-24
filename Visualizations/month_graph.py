@@ -28,6 +28,7 @@ def get_graph():
 
     # Set the x-axis labels
     time_values = np.arange(1, 13, 1)
+    timevaluemonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     # Plot the data
     axes.bar(time_values, time_data)
 
@@ -35,6 +36,7 @@ def get_graph():
     axes.set_xlabel('Time of Day')
     axes.set_ylabel('Number of Crimes')
     axes.set_xticks(time_values)
+    axes.set_xticklabels(timevaluemonths)
     axes.set_yticks(np.arange(0, max(time_data), 50000))
     axes.set_title('Number of Crimes by Month')
 

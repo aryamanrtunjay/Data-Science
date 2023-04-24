@@ -16,4 +16,5 @@ day_graph.get_graph()
 premise_description_graph.get_graph()
 cases_vs_month_vs_year.get_graph(2018)
 month_graph.get_graph()
-getcoordinates.get_coordinates() 
+getcoordinates.get_coordinates()
+
