@@ -4,3 +4,26 @@ NYPD_Complaint_Data_Historic.csv
 
 X_total.pickle
 Y_total.pickle
+.sync-conflict-20230317-181318-5OYVVGG.gitignore
+.idea/.gitignore
+.idea/Data-Science.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+Visualizations/all_graphs.py
+Visualizations/all_graphs.sync-conflict-20230317-181319-5OYVVGG.py
+Visualizations/crime_pychart.py
+Visualizations/getcoordinates.py
+Visualizations/month_graph.py
+Visualizations/getcoordinates.sync-conflict-20230317-181320-5OYVVGG.py
+Visualizations/month_graph.sync-conflict-20230321-185012-NRQ6425.py
+Visualizations/__pycache__/cases_vs_month_vs_year.cpython-38.pyc
+Visualizations/__pycache__/crime_pychart.cpython-38.pyc
+Visualizations/__pycache__/dataset.cpython-38.pyc
+Visualizations/__pycache__/dataset.cpython-39.pyc
+Visualizations/__pycache__/day_graph.cpython-38.pyc
+Visualizations/__pycache__/getcoordinates.cpython-38.pyc
+Visualizations/__pycache__/month_graph.cpython-38.pyc
+Visualizations/__pycache__/premise_description_graph.cpython-38.pyc
+Visualizations/__pycache__/time_graph.cpython-38.pyc
+Visualizations/__pycache__/vic_race.cpython-38.pyc
