@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import pdb
 import dataset as dataset
 import dataset as dataset
+import seaborn as sns
 
 def get_graph():
     crime_ds = dataset.get_dataset()
@@ -12,7 +13,7 @@ def get_graph():
 
     for i in range(len(crime_ds)):
         crime_type = crime_ds['LAW_CAT_CD'][i]
-        if crime_type == 'FELONY':
+        if crime_type == 'FELONY' :
             crime_desc = crime_ds['OFNS_DESC'][i]
             if(crime_desc not in crime_desc_classes):
                 crime_desc_classes.append(crime_desc)
@@ -34,22 +35,34 @@ def get_graph():
             else:
                 cleaned_crime_descs[cleaned_crime_desc_classes.index("OTHER")] += i
     r = cleaned_crime_desc_classes.index("RAPE") 
-    o = cleaned_crime_desc_classes.index("OTHER")
-    # set it blank
-    cleaned_crime_descs[r] = 0
-    cleaned_crime_descs[o] = 0
-    cleaned_crime_descs.pop(r)
     cleaned_crime_desc_classes.pop(r)
+    cleaned_crime_descs.pop(r)
+    o = cleaned_crime_desc_classes.index("OTHER")
     cleaned_crime_desc_classes.pop(o)
     cleaned_crime_descs.pop(o)
+    k = cleaned_crime_desc_classes.index("SEX CRIMES")
+    cleaned_crime_desc_classes.pop(k)
+    cleaned_crime_descs.pop(k)
+    # k = cleaned_crime_desc_classes.index("SEX CRIMES")
+    # cleaned_crime_descs[k] = 0
+    # set it blank
+    plt.rc('axes', titlesize = 23) 
+    plt.rc('axes', labelsize = 26)
+    plt.rc('xtick', labelsize = 22) 
+    plt.rc('ytick', labelsize = 22)
+    plt.rc('legend', fontsize = 23)
+    plt.rc('font', size = 25)
+    #pdb.set_trace()
+    color_palette = ['#f44336', '#6fa8dc', '#ffd966', '#b6d7a8']
+    colors = sns.set_palette(sns.color_palette(color_palette)) 
+
     fig = plt.figure()
     axes = fig.add_subplot(111)
-    axes.pie(cleaned_crime_descs, labels=cleaned_crime_desc_classes, autopct='%1.1f%%')
-
-
-    axes.set_title('Types of Crime in New York City')
+    axes.pie(cleaned_crime_descs, labels=cleaned_crime_desc_classes, autopct='%1.1f%%', colors=colors, radius = 1.5)
 
     plt.show()
+
+
 get_graph()
 
 #%%

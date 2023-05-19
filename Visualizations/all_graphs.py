@@ -18,3 +18,18 @@ cases_vs_month_vs_year.get_graph(2018)
 month_graph.get_graph()
 getcoordinates.get_coordinates()
 
+
+# to do 
+
+#make it clear m means male, f means female, and u means unknown in suspect sex. 
+#make the font bigger in the same file 
+
+#put gaps between slices in types of crime in new york city 
+
+#make font bigger on number of crimes by time of day
+
+#have less points on the y axis for the bar graphs with lots of points
+
+#put gaps for premises of the graph 
+
+#try to change the colors of the bars 
