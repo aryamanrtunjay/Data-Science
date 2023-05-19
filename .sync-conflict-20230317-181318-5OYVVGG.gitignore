@@ -1,0 +1,6 @@
+Models/datamodel-pytorch.py
+data.pickle
+NYPD_Complaint_Data_Historic.csv
+
+X_total.pickle
+Y_total.pickle

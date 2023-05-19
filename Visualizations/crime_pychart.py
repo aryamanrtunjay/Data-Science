@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import pdb
 import dataset as dataset
-import dataset
+import dataset as dataset
 
 def get_graph():
     crime_ds = dataset.get_dataset()
@@ -51,3 +51,5 @@ def get_graph():
 
     plt.show()
 get_graph()
+
+#%%
